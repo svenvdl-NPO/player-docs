@@ -9,7 +9,7 @@
 
     <link rel="icon" href="//po-player-docs.github.io/images/favicon.png" type="image/png">
 
-    <title>Categories :: NPO Player documentation</title>
+    <title>Getting started :: NPO Player documentation</title>
 
     
     <link href="//po-player-docs.github.io/css/nucleus.css?1676457782" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="//po-player-docs.github.io/categories/">
+  <body class="" data-url="//po-player-docs.github.io/implementation/getting-started/">
     <nav id="sidebar" class="">
 
 
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/implementation/" title="Implementation" class="dd-item
-        
+        parent
         
         
         ">
@@ -171,7 +171,7 @@
     
     <li data-nav-id="/implementation/getting-started/" title="Getting started" class="dd-item
         
-        
+        active
         
         ">
       <a href="//po-player-docs.github.io/implementation/getting-started/">
@@ -226,8 +226,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -238,7 +236,13 @@
             
           
           
-            <a href='//po-player-docs.github.io/'></a> > Categories
+            
+            
+          
+          
+            <a href='//po-player-docs.github.io/'></a> > <a href='//po-player-docs.github.io/implementation/'>Implementation</a> > Getting started
+          
+        
           
         
           
@@ -247,13 +251,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -261,31 +258,41 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                category ::
-              
-              Categories
-            </h1>
           
 
         
 
 
 
+	<h1 id="bitmovin">Bitmovin</h1>
+<p>Before you can start using the NPO Player you need access to the Bitmovin Dashboard. In order to get access please contact Leon Kohlen <a href="mailto:leon.kohlen@npo.nl">leon.kohlen@npo.nl</a>.</p>
+<ol>
+<li>
+<p>Once you access to the dashboard you can find your player and analytics key. These keys are mandatory and the player will not work without them.</p>
+</li>
+<li>
+<p>Make sure your domain/app is whitelisted.</p>
+</li>
+</ol>
+<h1 id="npotag">NPOTag</h1>
+<p>Next you will need to get <strong>NPOTag</strong> credentials if you haven&rsquo;t implemented V2 of the NPOTag yet. Get more information on the NPOTag (including how to request credentials) here: <a href="https://npotag.npo-data.nl/docs/index.html">https://npotag.npo-data.nl/docs/index.html</a>
+The minimum information you need is <code>brand</code> and <code>brandId</code>. You can either supply the player/library with an NpoTag implementation which you have already instantiated (for your own website/app usage tracking) or with a configuration object so a NpoTag instance can be created in the library.</p>
+<h1 id="jwt">JWT</h1>
+<p>Finally to start a stream we need to create a JSON web token (JWT). <a href="//po-player-docs.github.io/NPO-player/Implementation-NPO-player-library/2)-Create-JSON-Web-Token-(JWT)">Continue creating JWT.</a></p>
 
 
-<ul>
-	
-</ul>
+
 
 
 <footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -317,8 +324,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -334,6 +339,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -358,8 +364,8 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="//po-player-docs.github.io/implementation/" title="Implementation"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="//po-player-docs.github.io/implementation/" title="Implementation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
