@@ -105,4 +105,7 @@ a:hover {
 #homelinks {
     background-color: #ee7620;
     border-bottom: 4px solid #FD6B00;
-  }
+}
+ #chapter p {
+    text-align: left !important;
+ }
