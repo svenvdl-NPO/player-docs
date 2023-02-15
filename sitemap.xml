@@ -2,14 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//svenvdl-npo.github.io/npo-player-docs.github.io/</loc>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/getting-started/</loc>
   </url><url>
-    <loc>//svenvdl-npo.github.io/npo-player-docs.github.io/implementation/getting-started/</loc>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/web/npm/</loc>
   </url><url>
-    <loc>//svenvdl-npo.github.io/npo-player-docs.github.io/implementation/</loc>
+    <loc>//svenvdl-npo.github.io/player-docs/</loc>
   </url><url>
-    <loc>//svenvdl-npo.github.io/npo-player-docs.github.io/categories/</loc>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/create-a-jwt/</loc>
   </url><url>
-    <loc>//svenvdl-npo.github.io/npo-player-docs.github.io/tags/</loc>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/web/cdn/</loc>
+  </url><url>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/android/</loc>
+  </url><url>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/web/</loc>
+  </url><url>
+    <loc>//svenvdl-npo.github.io/player-docs/implementation/</loc>
+  </url><url>
+    <loc>//svenvdl-npo.github.io/player-docs/categories/</loc>
+  </url><url>
+    <loc>//svenvdl-npo.github.io/player-docs/tags/</loc>
   </url>
 </urlset>

@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Implementation on NPO Player documentation</title>
-    <link>//svenvdl-npo.github.io/npo-player-docs.github.io/implementation/</link>
+    <link>//svenvdl-npo.github.io/player-docs/implementation/</link>
     <description>Recent content in Implementation on NPO Player documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//svenvdl-npo.github.io/npo-player-docs.github.io/implementation/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//svenvdl-npo.github.io/player-docs/implementation/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

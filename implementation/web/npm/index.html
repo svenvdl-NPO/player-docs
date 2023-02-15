@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="//svenvdl-npo.github.io/player-docs/images/favicon.png" type="image/png">
+
+    <title>Implementation via NPM :: NPO Player documentation</title>
+
+    
+    <link href="//svenvdl-npo.github.io/player-docs/css/nucleus.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/fontawesome-all.min.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/hybrid.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/featherlight.min.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/perfect-scrollbar.min.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/auto-complete.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/atom-one-dark-reasonable.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/theme.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/tabs.css?1676460110" rel="stylesheet">
+    <link href="//svenvdl-npo.github.io/player-docs/css/hugo-theme.css?1676460110" rel="stylesheet">
+    
+    <link href="//svenvdl-npo.github.io/player-docs/css/theme-npo.css?1676460110" rel="stylesheet">
+    
+    
+
+    <script src="//svenvdl-npo.github.io/player-docs/js/jquery-3.3.1.min.js?1676460110"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="//svenvdl-npo.github.io/player-docs/implementation/web/npm/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 275 187.5" style="enable-background:new 0 0 275 187.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E5E5E5;}
+	.st1{fill:#FD6B00;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<g id="svg2" inkscape:version="0.48.3.1 r9886" sodipodi:docname="Neues Dokument 1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+	<g id="layer1" transform="translate(-267.90319,-401.477)" inkscape:groupmode="layer" inkscape:label="Ebene 1">
+		<g>
+			<path id="path3005" inkscape:connector-curvature="0" class="st0" d="M445,506.6l-71.9,71.9c-7.2,7.2-15.6,7.2-22.8,0l-71.9-71.9
+				c-7.2-7.2-7.2-15.5,0-22.8l71.9-71.9c7.2-7.3,15.5-7.3,22.8,0l71.9,71.9C452.3,491.1,452.3,499.4,445,506.6"/>
+		</g>
+		<g>
+			<path id="path3013" inkscape:connector-curvature="0" class="st1" d="M365.8,483.8c-7.2,7.2-7.2,15.5,0,22.8l71.9,71.9
+				c7.2,7.2,15.5,7.2,22.8,0l71.9-71.9c7.2-7.2,7.2-15.5,0-22.8l-71.9-71.9c-7.2-7.2-15.6-7.2-22.8,0L365.8,483.8z"/>
+		</g>
+	</g>
+</g>
+<g id="Layer_2">
+	<path class="st2" d="M157.5,58.5c0-5.9,4.2-11.3,10.1-11.3c2,0,3.8,0.6,5.5,1.8l45.1,32.2c4.7,3.4,6,10.3,3.2,15.4
+		c-0.8,1.5-1.9,2.8-3.2,3.7l-45.1,32.2c-4.9,3.5-11.3,1.6-14.2-3.7c-1-1.8-1.4-3.8-1.4-5.8V58.5z"/>
+</g>
+<g id="Layer_3">
+	<g>
+		<path d="M42.9,113.9L26.5,97.5c-0.8-0.8-0.9-1.7-0.4-2.7c0.7-1.4,1.9-2.9,3.7-4.7c2.5-2.5,5.1-3.8,7.7-3.8s5.1,1.1,7.4,3.4
+			s3.5,4.8,3.5,7.4c0,2.6-1.1,5.1-3.3,7.4c-0.9,0.9-1.8,1.6-2.7,2.1l3.9,3.9c0.4,0.4,0.6,0.8,0.7,1.2c0,0.4-0.2,0.8-0.7,1.2
+			l-0.9,0.9c-0.4,0.4-0.8,0.7-1.2,0.7C43.8,114.5,43.4,114.3,42.9,113.9z M31.1,95.2l8.5,8.5c0.8-0.4,1.5-1,2.3-1.7
+			c1.4-1.4,2.1-2.9,2-4.4s-0.9-3-2.3-4.4c-1.4-1.4-2.9-2.2-4.4-2.3c-1.5-0.1-3,0.6-4.4,2C32,93.7,31.5,94.5,31.1,95.2z"/>
+		<path d="M53.9,92.8L36.3,75.2c-0.4-0.4-0.7-0.8-0.7-1.2c0-0.4,0.2-0.8,0.7-1.2l0.9-0.9c0.4-0.4,0.8-0.7,1.2-0.7
+			c0.4,0,0.8,0.2,1.2,0.7l17.6,17.6c0.4,0.4,0.7,0.8,0.7,1.2c0,0.4-0.2,0.8-0.7,1.2l-0.9,0.9c-0.4,0.4-0.8,0.7-1.2,0.7
+			C54.7,93.4,54.3,93.2,53.9,92.8z"/>
+		<path d="M50.7,74.4l-0.4-0.2c-0.3-0.1-0.5-0.3-0.7-0.5c-0.4-0.4-0.5-1-0.2-1.8c0.6-1.5,1.9-3.3,3.8-5.2c2-2,4-3,5.9-3.1
+			c1.9,0,3.9,1,6,3l7,7c0.5,0.5,0.7,0.9,0.7,1.3c0,0.4-0.2,0.9-0.5,1.4c-1,1.7-2.5,3.5-4.5,5.5c-2,2-4,3.2-5.8,3.5
+			c-1.9,0.3-3.6-0.3-5.1-1.8c-1.5-1.5-2.1-3.2-1.8-5.1s1.4-3.7,3.3-5.6c1.1-1.1,2.2-2,3.4-2.7l-0.4-0.4c-1.8-1.8-3.8-1.7-5.9,0.4
+			c-0.8,0.8-1.6,1.9-2.3,3.3c-0.2,0.4-0.4,0.7-0.5,0.8C52.1,74.7,51.5,74.7,50.7,74.4z M67.8,76.3l-3.6-3.6
+			c-0.9,0.5-1.8,1.2-2.7,2.1c-2.2,2.2-2.6,4-1.2,5.5c1.4,1.4,3.2,1,5.5-1.3C66.7,78,67.4,77.1,67.8,76.3z"/>
+		<path d="M85.9,73.4L85,74.3c-0.7,0.7-1.3,0.7-1.9,0.2c-0.2-0.2-0.4-0.5-0.6-1l-2.4-5.5l-16.9-7.6c-0.5-0.2-0.8-0.4-1-0.6
+			c-0.6-0.6-0.5-1.2,0.2-1.9l1.2-1.2c0.8-0.8,1.7-0.9,2.7-0.3l12.2,6.3l-6.3-12.2c-0.5-1.1-0.4-2,0.3-2.7l1.1-1.1
+			c0.7-0.7,1.3-0.7,1.9-0.2c0.2,0.2,0.4,0.5,0.6,1l10.2,23c0.3,0.6,0.4,1.1,0.3,1.5C86.6,72.5,86.4,73,85.9,73.4z"/>
+		<path d="M100.3,44.1l0.5,0.2c0.3,0.2,0.6,0.3,0.8,0.5c0.5,0.5,0.6,1.1,0.2,1.9c-0.7,1.6-1.9,3.2-3.6,4.9c-2.5,2.5-4.9,3.7-7.5,3.6
+			c-2.5,0-5-1.2-7.4-3.6c-2.5-2.5-3.7-5-3.7-7.5c0-2.5,1-4.7,2.9-6.7c2-2,4.3-3,6.7-2.9s4.8,1.3,7.1,3.6c0.8,0.8,0.8,1.5,0.1,2.1
+			l-8.8,8.8c1.1,1.1,2.4,1.6,3.7,1.5c1.4-0.1,2.8-0.8,4.3-2.3c0.9-0.9,1.6-2,2.3-3.3c0.2-0.4,0.4-0.6,0.5-0.8
+			C98.8,43.8,99.5,43.7,100.3,44.1z M85.2,46.7l6.4-6.4c-1.2-1-2.3-1.6-3.5-1.6s-2.2,0.4-3.2,1.4s-1.4,2-1.3,3.2
+			C83.7,44.3,84.2,45.5,85.2,46.7z"/>
+		<path d="M105.2,41.5L94,30.3c-0.8-0.8-0.9-1.7-0.4-2.7c1.1-1.9,2.3-3.6,3.8-5.1c0.8-0.8,1.5-1.4,2.1-1.9c0.8-0.6,1.5-0.6,2.2,0
+			c0.2,0.2,0.3,0.4,0.5,0.6l0.2,0.3c0.3,0.5,0.5,0.9,0.5,1.2s-0.1,0.6-0.5,1c-0.1,0.1-0.4,0.3-0.8,0.7s-0.9,0.7-1.2,1
+			c-0.9,0.9-1.6,1.8-2,2.6l10,10c0.4,0.4,0.6,0.8,0.6,1.2c0,0.4-0.2,0.8-0.7,1.2l-0.9,0.9c-0.4,0.4-0.8,0.7-1.2,0.7
+			C106,42.1,105.6,41.9,105.2,41.5z"/>
+	</g>
+</g>
+</svg>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="//svenvdl-npo.github.io/player-docs/js/lunr.min.js?1676460110"></script>
+<script type="text/javascript" src="//svenvdl-npo.github.io/player-docs/js/auto-complete.js?1676460110"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/svenvdl-npo.github.io\/player-docs";
+    
+</script>
+<script type="text/javascript" src="//svenvdl-npo.github.io/player-docs/js/search.js?1676460110"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='//svenvdl-npo.github.io/player-docs/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/" title="Implementation" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/">
+          Implementation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/getting-started/" title="Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/getting-started/">
+          <b>1. </b>Getting started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/create-a-jwt/" title="Create JSON Web Token (JWT)" class="dd-item
+        
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/create-a-jwt/">
+          <b>2. </b>Create JSON Web Token (JWT)
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/android/" title="Implementation on Android" class="dd-item
+        
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/android/">
+          <b>3. </b>Implementation on Android
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/web/" title="Implementation for Web" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/web/">
+          <b>4. </b>Implementation for Web
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/web/npm/" title="Implementation via NPM" class="dd-item
+        
+        active
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/web/npm/">
+          <b>1. </b>Implementation via NPM
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation/web/cdn/" title="Implementation via CDN" class="dd-item
+        
+        
+        
+        ">
+      <a href="//svenvdl-npo.github.io/player-docs/implementation/web/cdn/">
+          <b>2. </b>Implementation via CDN
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='//svenvdl-npo.github.io/player-docs/'>Welcome</a> > <a href='//svenvdl-npo.github.io/player-docs/implementation/'>Implementation</a> > <a href='//svenvdl-npo.github.io/player-docs/implementation/web/'>Implementation for Web</a> > Implementation via NPM
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+	<h1 id="installing">Installing</h1>
+<p>##Install with NPM
+We use a private feed you need to connect to first.
+In your project, add a file named &lsquo;.npmrc&rsquo; and add this line:</p>
+<p><em>We advise you to keep the auth token outside of your tracked git files. Best practices would be to create two <code>.npmrc</code> files, one for the project and one system wide.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>; /$PROJECT_DIR/.nmprc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@npoplayer:registry=https://pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/registry/
+</span></span><span style="display:flex;"><span>always-auth=true
+</span></span></code></pre></div><h4 id="for-mac">For Mac:</h4>
+<p>Add this to your user&rsquo;s .npmrc file and replace the [BASE64_ENCODED_ACCESS_KEY] with the key you are provided.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>; /Users/$USER_DIR/.nmprc (Mac, hidden file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>; begin auth token
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/registry/:username=
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/registry/:_password=
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/registry/:email=
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/:username=
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/:_password=
+</span></span><span style="display:flex;"><span>//pkgs.dev.azure.com/NPOplayer/_packaging/NPOplayer/npm/:email=
+</span></span><span style="display:flex;"><span>; end auth token
+</span></span></code></pre></div><h4 id="for-windows">For Windows:</h4>
+<p>Run this command to add the token to your user&rsquo;s .npmrc file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vsts-npm-auth -config .npmrc
+</span></span></code></pre></div><h3 id="install-from-registry">Install from registry</h3>
+<p>After adding the access token and the registry you can install the package:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install npoplayer
+</span></span></code></pre></div><p>Import it into your project:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;npoplayer/src/scss/npoplayer.scss&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NpoPlayer</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;npoplayer&#39;</span>;
+</span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">npoplayer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">NpoPlayer</span>;
+</span></span></code></pre></div><h1 id="basic-usage">Basic usage</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">npoplayer</span>(<span style="color:#a6e22e">container</span>, <span style="color:#a6e22e">playerConfig</span>, <span style="color:#a6e22e">npotag</span><span style="color:#f92672">?</span>, <span style="color:#a6e22e">npotaginstance</span><span style="color:#f92672">?</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadStream</span>(<span style="color:#a6e22e">jwt</span>);
+</span></span></code></pre></div><p>The parameters <code>container</code>, <code>playerConfig</code>, <code>npotag</code> (optional), <code>npotag</code> (optional), <code>jwt</code> passed to the functions need to be defined as below.</p>
+<h1 id="jwt">JWT</h1>
+<p>The player library makes use of the JSON Web Token (JWT) technology. More information about using JWT can be found at this website <a href="https://jwt.io/introduction">JWT.IO - JSON Web Tokens Introduction</a></p>
+<p><strong>Create your own unique JWT for each PRID</strong></p>
+<p>To be able to load your stream for any player you need to make use of a <a href="https://www.npmjs.com/package/jsonwebtoken">self generated JWT</a>.</p>
+<p><strong>JWT header:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;alg&#34;</span>: <span style="color:#e6db74">&#34;HS256&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;typ&#34;</span>: <span style="color:#e6db74">&#34;JWT&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Date.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">/</span> <span style="color:#ae81ff">1000</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;iat&#34;</span>: <span style="color:#960050;background-color:#1e0010">timestamp</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sub&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt; PRID &gt;&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;iss&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt; YOUR BROADCASTER NAME&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;cip&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt; IP FROM CLIENT &gt;&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;age&#34;</span>: <span style="color:#e6db74">&#34;26&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Sign JWT:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">HMACSHA256</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">base64UrlEncode</span>(<span style="color:#a6e22e">header</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">base64UrlEncode</span>(<span style="color:#a6e22e">payload</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">your</span><span style="color:#f92672">-</span><span style="color:#ae81ff">256</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">secret</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p><strong>Example of generated JWT:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzMyNjIzNTEsInN1YiI6IkxJX05MMV80MTg4MTAyIiwiaXNzIjoibnBvX3N0YXJ0IiwiY2lwIjoiODYuOTAuNjcuMTUyIiwiYWdlIjoiMjYifQ.c9EQFdUcpvIXppZVdzN_JhLjdnVEbvRTa7wabH9W7h4
+</span></span></code></pre></div><p>For every new request you make to the player library a new JWT needs to be sent to the NPO player library</p>
+<h2 id="player-container">Player Container</h2>
+<p>The player SDK needs to know within which container it should render its video and UI components. In this example a <code>div</code>-element is used with a unique <code>id=&quot;my-player&quot;</code>, which is the recommended approach in general.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-player&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><h2 id="create-a-player-configuration">Create a Player Configuration</h2>
+<p>A minimal player configuration requires the <code>key</code> property to be present, which expects a Player License Key. When served on <code>localhost</code>, no valid player license key is required to simplify development efforts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">playerConfig</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;&lt; KEY &gt;&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>You can however add optional values to customize the players&rsquo; behaviour. For player events, (for now) you need to import it from the Bitmovin library with <code>import {PlayerEvent} from &quot;bitmovin-player&quot;;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">playerConfig</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;&lt; KEY &gt;&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">analytics</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;&lt; ANALYTICS KEY &gt;&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">playback</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">muted</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="create-an-npo-tag-instance">Create an NPO Tag instance</h2>
+<p>For analytics purposes you can add and existing NPO Tag instance to the player or properties to create one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">npotag</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">brand</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[YOUR_COMPANY]&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">brand_id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">platform</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[web/ios/android]&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">platform_version</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[YOUR_PLATFORM_VERSION]&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">debug</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span></code></pre></div><h2 id="optional-options">Optional: Options</h2>
+<p>There are several options you can use for the players behaviour.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//properties
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadStream</span>(<span style="color:#a6e22e">jwt</span>, <span style="color:#a6e22e">options</span>);
+</span></span></code></pre></div><p><strong>Available properties</strong>
+<code>sourceConfig</code> - object: used for defining information about the source
+<code>fragments</code> - object: used for defining and playing fragments
+<code>endpoint</code> - string: the endpoint used to get the stream-link</p>
+<p>The following properties need to be added directly into the options object.</p>
+<p><strong>Source configuration</strong>
+The source configuration is used for defining information about the source like title, description, dash streamurl, hls streamurl, drm, subtitles, thumbnails etc.
+The configuration is created by the library but you can overwrite this by adding a custom config to the <code>loadStream</code> function</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* ... */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sourceConfig</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Video title&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Video description&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">poster</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;POSTER IMAGE URL&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">thumbnailTrack</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;THUMBNAIL TRACK URL&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">subtitleTracks</span><span style="color:#f92672">:</span> [{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;SUBTITLE TRACK URL&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>      }],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">analytics</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Program title - Episode title&#39;</span>,
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadStream</span>(<span style="color:#a6e22e">jwt</span>, <span style="color:#a6e22e">options</span>);
+</span></span></code></pre></div><p><strong>Fragments</strong>
+If you want to load a fragment of a video you can use the fragments property:
+(currently there is only support for one fragment)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">options</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* ... */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fragments</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sections</span><span style="color:#f92672">:</span> [{<span style="color:#a6e22e">time</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>, <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">610</span>, <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Section 1&#39;</span>}]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadStream</span>(<span style="color:#a6e22e">jwt</span>, <span style="color:#a6e22e">options</span>);
+</span></span></code></pre></div><h2 id="create-a-new-player-instance">Create a new Player Instance</h2>
+<p>Initiate  a new player instance by providing it with a reference to the DOM element of your player-div and the player configuration object you defined earlier.
+Then load a video or stream with the generated JWT and an optional sourceConfig.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">container</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;my-player&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jwt</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;&lt; OWN CREATED JWT &gt;&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">player</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">npoplayer</span>(<span style="color:#a6e22e">container</span>, <span style="color:#a6e22e">options</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">loadStream</span>(<span style="color:#a6e22e">jwt</span>);
+</span></span></code></pre></div><h2 id="license">License</h2>
+<p>MIT</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="//svenvdl-npo.github.io/player-docs/implementation/web/" title="Implementation for Web"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="//svenvdl-npo.github.io/player-docs/implementation/web/cdn/" title="Implementation via CDN" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="//svenvdl-npo.github.io/player-docs/js/clipboard.min.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/perfect-scrollbar.min.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/perfect-scrollbar.jquery.min.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/jquery.sticky.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/featherlight.min.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/highlight.pack.js?1676460110"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/modernizr.custom-3.6.0.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/learn.js?1676460110"></script>
+    <script src="//svenvdl-npo.github.io/player-docs/js/hugo-learn.js?1676460110"></script>
+    
+        
+            <script src="//svenvdl-npo.github.io/player-docs/mermaid/mermaid.js?1676460110"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

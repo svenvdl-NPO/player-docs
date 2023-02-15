@@ -9,7 +9,7 @@
 
     <link rel="icon" href="//svenvdl-npo.github.io/player-docs/images/favicon.png" type="image/png">
 
-    <title>Categories :: NPO Player documentation</title>
+    <title>Implementation for Web :: NPO Player documentation</title>
 
     
     <link href="//svenvdl-npo.github.io/player-docs/css/nucleus.css?1676460110" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="//svenvdl-npo.github.io/player-docs/categories/">
+  <body class="" data-url="//svenvdl-npo.github.io/player-docs/implementation/web/">
     <nav id="sidebar" class="">
 
 
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/implementation/" title="Implementation" class="dd-item
-        
+        parent
         
         
         ">
@@ -249,7 +249,7 @@
     
     <li data-nav-id="/implementation/web/" title="Implementation for Web" class="dd-item
         
-        
+        active
         
         ">
       <a href="//svenvdl-npo.github.io/player-docs/implementation/web/">
@@ -368,8 +368,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -380,7 +378,13 @@
             
           
           
-            <a href='//svenvdl-npo.github.io/player-docs/'>Welcome</a> > Categories
+            
+            
+          
+          
+            <a href='//svenvdl-npo.github.io/player-docs/'>Welcome</a> > <a href='//svenvdl-npo.github.io/player-docs/implementation/'>Implementation</a> > Implementation for Web
+          
+        
           
         
           
@@ -389,13 +393,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -403,31 +400,41 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                category ::
-              
-              Categories
-            </h1>
           
 
         
 
 
 
-
-
+	<p>For the implementation of the player we have two options. Installing via NPM or by using the CDN url.</p>
+<p>Both implementations make use of the same library but are distributed differently.</p>
+<p><strong>Why use NPM</strong></p>
 <ul>
-	
+<li>Easy to install via package manager.</li>
+<li>Easy to maintain within the project.</li>
+<li>Lets your local IDE provide code intellisense and type-checking.</li>
+<li>provide source code for (Webpack) bundling, which combines all the JavaScript files to be a (minified) single file, so no dependencies.</li>
 </ul>
+<p><strong>Why use CDN</strong></p>
+<ul>
+<li>Quick implementation cycle.</li>
+<li>Easy to integrate within your website.</li>
+<li>Simple cacheable.</li>
+</ul>
+
+
+
 
 
 <footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -459,8 +466,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -476,6 +481,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -525,6 +533,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -539,6 +548,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -582,8 +594,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="//svenvdl-npo.github.io/player-docs/implementation/android/" title="Implementation on Android"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="//svenvdl-npo.github.io/player-docs/implementation/" title="Implementation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="//svenvdl-npo.github.io/player-docs/implementation/web/npm/" title="Implementation via NPM" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

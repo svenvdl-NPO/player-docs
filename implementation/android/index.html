@@ -9,7 +9,7 @@
 
     <link rel="icon" href="//svenvdl-npo.github.io/player-docs/images/favicon.png" type="image/png">
 
-    <title>Categories :: NPO Player documentation</title>
+    <title>Implementation on Android :: NPO Player documentation</title>
 
     
     <link href="//svenvdl-npo.github.io/player-docs/css/nucleus.css?1676460110" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="//svenvdl-npo.github.io/player-docs/categories/">
+  <body class="" data-url="//svenvdl-npo.github.io/player-docs/implementation/android/">
     <nav id="sidebar" class="">
 
 
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/implementation/" title="Implementation" class="dd-item
-        
+        parent
         
         
         ">
@@ -223,7 +223,7 @@
     
     <li data-nav-id="/implementation/android/" title="Implementation on Android" class="dd-item
         
-        
+        active
         
         ">
       <a href="//svenvdl-npo.github.io/player-docs/implementation/android/">
@@ -368,8 +368,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -380,7 +378,13 @@
             
           
           
-            <a href='//svenvdl-npo.github.io/player-docs/'>Welcome</a> > Categories
+            
+            
+          
+          
+            <a href='//svenvdl-npo.github.io/player-docs/'>Welcome</a> > <a href='//svenvdl-npo.github.io/player-docs/implementation/'>Implementation</a> > Implementation on Android
+          
+        
           
         
           
@@ -389,13 +393,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -403,31 +400,62 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-                category ::
-              
-              Categories
-            </h1>
           
 
         
 
 
 
+	<h1 id="adding-the-library-to-your-own-app">Adding the library to your own app</h1>
+<p>In you projects <code>build.gradle</code> or <code>settings.gradle</code> you will need to add this maven repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#75715e">// NPO Player library
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>maven <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    url <span style="color:#e6db74">&#39;https://pkgs.dev.azure.com/NPOplayer/NPO-player-public/_packaging/NPOPlayerLibrary-Android/maven/v1&#39;</span>
+</span></span><span style="display:flex;"><span>    name <span style="color:#e6db74">&#39;NPOPlayerLibrary-Android&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Bitmovin Player
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>maven <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    url <span style="color:#e6db74">&#39;https://artifacts.bitmovin.com/artifactory/public-releases&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Then in you app&rsquo;s <code>build.gradle</code> import it through:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>    <span style="color:#75715e">// -- NPOPlayer library --//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>implementation <span style="color:#e6db74">&#34;nl.npo.player.library:npoPlayerAndroid:&lt;LATEST_VERSION&gt;&#34;</span>
+</span></span></code></pre></div><p>Optionally your different modules might need access to a subset of this data, like the domain or
+NPOTag specific data. Then import those libraries separately:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#34;nl.npo.player.library:domain:&lt;LATEST_VERSION&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#34;nl.npo.player.library:npoTag:&lt;LATEST_VERSION&gt;&#34;</span>
+</span></span></code></pre></div><p>Check out the <code>&quot;&lt;LATEST_VERSION&gt;&quot;</code> number from <a href="https://dev.azure.com/NPOplayer/NPO-player-public/_artifacts/feed/NPOPlayerLibrary-Android">Azure</a>.</p>
+<p>When the library package is added to your project you will need to initialise the library before you use it by providing it with an (Application) Context an <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/domain/src/main/java/nl/npo/player/library/domain/common/enums/Environment.kt">Environment</a> (TEST, ACC, PROD) and either an NpoTag or <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/domain/src/main/java/nl/npo/player/library/domain/analytics/model/AnalyticsConfiguration.kt">AnalyticsConfiguration</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#a6e22e">NPOPlayerLibrary</span>.initialize(context = Context, environment = Environment, npoTag = NpoTag)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NPOPlayerLibrary</span>.initialize(
+</span></span><span style="display:flex;"><span>    context = Context,
+</span></span><span style="display:flex;"><span>    environment = Environment,
+</span></span><span style="display:flex;"><span>    analyticsConfiguration = AnalyticsConfiguration
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Optionally with either of these initializers you can also add a list of OkHttp3 <code>Interceptor</code>&rsquo;s for
+debugging purposes through the <code>optionalInterceptors</code> parameter (for example so you can log the
+network call or add a Chucker interceptor).</p>
+<p>Then for playing streams you will need to instantiate a <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/library/src/main/java/nl/npo/player/library/presentation/model/NPOPlayerBitmovin.kt">NPOPlayerBitmovin</a> which needs a Context, <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/domain/src/main/java/nl/npo/player/library/domain/analytics/model/PlayerPageTracker.kt">PlayerPageTracker</a> and optionally a <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/library/src/main/java/nl/npo/player/library/presentation/model/NPOPlayerConfig.kt">NPOPlayerConfig</a>. To get a <code>PlayerPageTracker</code> you need to make a call to the helper object <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/npoTag/src/main/java/nl/npo/player/library/npotag/PlayerTagProvider.kt">PlayerTagProvider</a> <code>getPageTracker</code> function. You can either supply is an NpoTag <code>PageTracker</code> (if your app uses it&rsquo;s own NpoTag
+implementation) or a <a href="https://dev.azure.com/NPOplayer/NPO-player/_git/NPO-Player-Android?version=GBmain&amp;path=library/domain/src/main/java/nl/npo/player/library/domain/analytics/model/PageConfiguration.kt">PageConfiguration</a>.</p>
+<h3 id="androidtv">AndroidTV</h3>
+<p>The AndroidTV module is still very much Work In Progress but can separately be loaded in in a
+Leanback application using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#34;nl.npo.player.library:domain:&lt;LATEST_VERSION&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>implementation <span style="color:#e6db74">&#34;nl.npo.player.library:presentationTV:&lt;LATEST_VERSION&gt;&#34;</span>
+</span></span></code></pre></div>
 
 
-<ul>
-	
-</ul>
 
 
 <footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -459,8 +487,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -476,6 +502,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -509,6 +538,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -524,6 +554,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -582,8 +615,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="//svenvdl-npo.github.io/player-docs/implementation/create-a-jwt/" title="Create JSON Web Token (JWT)"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="//svenvdl-npo.github.io/player-docs/implementation/" title="Implementation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="//svenvdl-npo.github.io/player-docs/implementation/web/" title="Implementation for Web" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

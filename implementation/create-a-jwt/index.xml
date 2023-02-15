@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Create JSON Web Token (JWT) on NPO Player documentation</title>
+    <link>//svenvdl-npo.github.io/player-docs/implementation/create-a-jwt/</link>
+    <description>Recent content in Create JSON Web Token (JWT) on NPO Player documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="//svenvdl-npo.github.io/player-docs/implementation/create-a-jwt/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
